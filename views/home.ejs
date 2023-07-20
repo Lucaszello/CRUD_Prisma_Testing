@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <% for(let post of allUsers) { %>
+
+    <section style="display: flex; align-items: baseline;">
+      <span style="margin-right: 5px;"><%= post.id %></span>
+      <div>
+        <h3><%= post.title %></h3>
+        <p><%= post.description %></p>
+        <a href="/detail/<%= post.id %>" class="">detail</a>
+        <form style="margin-top: 5px;" action="/delete/<%= post.id %>" method="post">
+          <button>delete</button>
+        </form>
+      </div>
+    </section>
+    <% } %>
+    <hr>
+    <a href="/admin/addPost" class="">Go to Add</a>
+  </body>
+</html>
